@@ -13,4 +13,4 @@ db.[NOMBRE_ZONA].[com] Es el archivo de zona en el que se establece los RR (Reso
 IN -> Record Class
 Parámetros del SOA -> Refresh ( Cada cuantos milisegundos los DNS Secundarios verifican los cambios) 
 
- 
+parcial1/parte1/slave-dns-named.conf.local -> es donde está alogada la configuración del archivo de configuración de bind9 para definir las zonas que son transferidas (Transferencia de zonas) con el tipo de solicitud AXFR 
