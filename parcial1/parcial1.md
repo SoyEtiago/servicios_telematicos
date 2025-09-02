@@ -69,3 +69,13 @@ sudo systemctl restart apache2
 # Verificar que está funcionando
 curl -H "Accept-Encoding: gzip" -I http://tu-sitio.com
 
+
+# Deshabilidad mod_deflate
+a2dismod deflate -f
+
+PARTE 3
+
+se mueve el archivo ngrok a /usr/local/bin
+
+# Dar permisos de ejecución
+sudo chmod +x /usr/local/bin/ngrok

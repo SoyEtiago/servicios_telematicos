@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Servidor Web - Parcial Servicios Telemáticos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #00ff88;
+        }
+        
+        .server-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            margin-right: 8px;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Servidor Web Expuesto</h1>
+        
+        <div class="info-card">
+            <h2><span class="status-indicator"></span>Estado del Servidor</h2>
+            <p><strong>Servidor:</strong> Apache 2.4</p>
+            <p><strong>Estado:</strong> <code>Activo y accesible desde Internet</code></p>
+            <p><strong>Túnel:</strong> Configurado con Ngrok</p>
+            <p><strong>Fecha de prueba:</strong> <span id="fecha-actual"></span></p>
+        </div>
+        
+        <div class="info-card">
+            <h2>📋 Información del Parcial</h2>
+            <p><strong>Estudiante:</strong> Etienne Santiago Samboni Piamba</p>
+            <p><strong>Materia:</strong> Servicios Telemáticos</p>
+            <p><strong>Actividad:</strong> Primer Parcial - Parte 3</p>
+            <p><strong>Universidad:</strong> Universidad Autónoma de Occidente</p>
+        </div>
+        
+        <div class="server-info">
+            <div class="info-card">
+                <h3>🌐 Conectividad</h3>
+                <p>Esta página es accesible desde:</p>
+                <ul>
+                    <li>Red local (localhost)</li>
+                    <li>Internet público (vía túnel)</li>
+                    <li>Dispositivos móviles</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>🔧 Tecnologías</h3>
+                <p>Implementación usando:</p>
+                <ul>
+                    <li>Apache Web Server</li>
+                    <li>Ngrok Tunnel</li>
+                    <li>HTML5 & CSS3</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Página generada automáticamente • Parcial Servicios Telemáticos • 2025</p>
+            <p>Última actualización: <span id="timestamp"></span></p>
+        </div>
+    </div>
+    
+    <script>
+        // Mostrar fecha actual
+        document.getElementById('fecha-actual').textContent = new Date().toLocaleDateString('es-CO');
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('es-CO');
+        
+        // Información adicional del navegador
+        console.log('🚀 Servidor web accesible desde Internet');
+        console.log('User Agent:', navigator.userAgent);
+        console.log('Ubicación:', window.location.href);
+        
+        // Detectar si se está accediendo vía túnel
+        if (window.location.hostname.includes('ngrok')) {
+            console.log('✅ Acceso vía túnel Ngrok detectado');
+        }
+    </script>
+</body>
+</html>
